@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- PLAYLIST ART -->
+
+    <FrameLayout
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="#292929">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="🎵"
+            android:textSize="30sp"/>
+
+    </FrameLayout>
+
+    <!-- PLAYLIST INFO -->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/youtubePlaylistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Playlist"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:text="Playlist • YouTube Music"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <!-- MORE -->
+
+    <TextView
+        android:id="@+id/playlistMoreButton"
+        android:layout_width="44dp"
+        android:layout_height="68dp"
+        android:gravity="center"
+        android:text="⋮"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"/>
+
+</LinearLayout>

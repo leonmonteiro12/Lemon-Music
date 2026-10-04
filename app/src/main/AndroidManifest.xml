@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Floating player only -->
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission
+    android:name="android.permission.CHANGE_WIFI_STATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:label="Lemon Music"
+        android:icon="@drawable/lemon_music_icon"
+        android:roundIcon="@drawable/lemon_music_icon"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DeviceAudioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubeMusicActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubeWebActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubeLoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubeLibraryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubePlaylistsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".YouTubePlaylistSongsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Nowplayingactivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LyricsActivity"
+            android:exported="false" />
+            
+            <activity
+             android:name=".aboutActivity" />
+
+        <!-- Normal local/device music -->
+        <service
+            android:name=".MusicPlaybackService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- Floating mini player -->
+        <service
+            android:name=".FloatingPlayerService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- YouTube background controller -->
+        <service
+            android:name=".LemonPlaybackService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+    </application>
+
+</manifest>
