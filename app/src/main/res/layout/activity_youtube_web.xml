@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#080808"
+    android:background="#0B0B08"
     android:paddingStart="18dp"
     android:paddingEnd="18dp"
     android:paddingTop="6dp"
     android:paddingBottom="10dp">
-
-    <!-- =====================================================
-         TOP BAR
-         ===================================================== -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,38 +20,33 @@
             android:id="@+id/buttonBack"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:background="@android:color/transparent"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Back"
             android:padding="10dp"
             android:src="@android:drawable/ic_menu_revert"
-            android:tint="#FFFFFF"/>
+            android:tint="#FFD928" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Now Playing"
-            android:textColor="#FFFFFF"
+            android:text="NOW PLAYING"
+            android:textColor="#FFF9D6"
+            android:letterSpacing="0.06"
             android:textSize="21sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/buttonMore"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:background="@android:color/transparent"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="More options"
             android:padding="11dp"
             android:src="@android:drawable/ic_menu_more"
-            android:tint="#FFFFFF"/>
-
+            android:tint="#FFD928" />
     </LinearLayout>
-
-
-    <!-- =====================================================
-         MAIN PLAYER AREA
-         ===================================================== -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,38 +57,42 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
-        <!-- LARGE ARTWORK AREA -->
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#202020"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:background="#181810">
+
+            <ImageView
+                android:id="@+id/albumArt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Current video thumbnail"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lemon_music_icon" />
 
             <ProgressBar
                 android:id="@+id/loadingProgress"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:layout_gravity="center"
-                android:visibility="gone"/>
+                android:indeterminateTint="#FFD928"
+                android:visibility="gone" />
 
             <ImageButton
                 android:id="@+id/buttonCenterPlay"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
                 android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:contentDescription="Play"
+                android:visibility="gone"
+                android:background="@drawable/lemon_player_play_bg"
+                android:contentDescription="Play or pause"
                 android:padding="18dp"
                 android:src="@android:drawable/ic_media_play"
-                android:tint="#FFFFFF"/>
-
+                android:tint="#171707" />
         </FrameLayout>
-
-
-        <!-- SONG TITLE -->
 
         <TextView
             android:id="@+id/songTitle"
@@ -108,12 +102,9 @@
             android:ellipsize="end"
             android:gravity="center"
             android:text="YouTube Music"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFFDF0"
             android:textSize="24sp"
-            android:textStyle="bold"/>
-
-
-        <!-- ARTIST -->
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/songArtist"
@@ -124,34 +115,26 @@
             android:ellipsize="end"
             android:gravity="center"
             android:text="YouTube"
-            android:textColor="#AAAAAA"
-            android:textSize="16sp"/>
-
+            android:textColor="#BDBBAA"
+            android:textSize="16sp" />
     </LinearLayout>
 
-
-    <!-- =====================================================
-         LYRICS BUTTON
-         ===================================================== -->
-<Button
-    android:id="@+id/lyricsButton"
-    android:layout_width="wrap_content"
-    android:layout_height="44dp"
-    android:layout_gravity="start"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
-    android:minWidth="0dp"
-    android:minHeight="0dp"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp"
-    android:text="🎤 Lyrics"
-    android:textAllCaps="false"
-    android:textColor="#151515"
-    android:textSize="14sp"
-    android:backgroundTint="#C9B5FF"/>
-    <!-- =====================================================
-         SEEK BAR
-         ===================================================== -->
+    <Button
+        android:id="@+id/lyricsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="🎤 Lyrics"
+        android:textAllCaps="false"
+        android:textColor="#151515"
+        android:textSize="14sp"
+        android:backgroundTint="#FFD928" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -165,7 +148,10 @@
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:max="100"
-            android:progress="0"/>
+            android:progress="0"
+            android:progressTint="#FFD928"
+            android:progressBackgroundTint="#555548"
+            android:thumbTint="#FFE66B" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -178,106 +164,99 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="0:00"
-                android:textColor="#AAAAAA"
-                android:textSize="13sp"/>
+                android:textColor="#BDBBAA"
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/totalTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0:00"
-                android:textColor="#AAAAAA"
-                android:textSize="13sp"/>
-
+                android:textColor="#BDBBAA"
+                android:textSize="13sp" />
         </LinearLayout>
-
     </LinearLayout>
-
-
-    <!-- =====================================================
-         PLAYBACK CONTROLS
-         ===================================================== -->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="82dp"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <!-- PREVIOUS -->
+        <ImageButton
+            android:id="@+id/shuffleButton"
+            android:layout_width="38dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Shuffle"
+            android:padding="9dp"
+            android:alpha="0.45"
+            android:src="@android:drawable/ic_menu_rotate"
+            android:tint="#FFE66B" />
 
         <ImageButton
             android:id="@+id/buttonPrevious"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:layout_marginEnd="4dp"
-            android:background="@android:color/transparent"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Previous"
-            android:padding="13dp"
+            android:padding="10dp"
             android:src="@android:drawable/ic_media_previous"
-            android:tint="#FFFFFF"/>
-
-
-        <!-- REWIND -->
+            android:tint="#FFE66B" />
 
         <ImageButton
             android:id="@+id/buttonRewind"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:background="@android:color/transparent"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Rewind"
-            android:padding="13dp"
+            android:padding="10dp"
             android:src="@android:drawable/ic_media_rew"
-            android:tint="#FFFFFF"/>
-
-
-        <!-- PLAY / PAUSE -->
+            android:tint="#FFE66B" />
 
         <ImageButton
             android:id="@+id/buttonPlayPause"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/transparent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/lemon_player_play_bg"
             android:contentDescription="Play or pause"
-            android:padding="15dp"
+            android:padding="13dp"
             android:src="@android:drawable/ic_media_play"
-            android:tint="#FFFFFF"/>
-
-
-        <!-- FORWARD -->
+            android:tint="#171707" />
 
         <ImageButton
             android:id="@+id/buttonForward"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:background="@android:color/transparent"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Forward"
-            android:padding="13dp"
+            android:padding="10dp"
             android:src="@android:drawable/ic_media_ff"
-            android:tint="#FFFFFF"/>
-
-
-        <!-- NEXT -->
+            android:tint="#FFE66B" />
 
         <ImageButton
             android:id="@+id/buttonNext"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="4dp"
-            android:background="@android:color/transparent"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Next"
-            android:padding="13dp"
+            android:padding="10dp"
             android:src="@android:drawable/ic_media_next"
-            android:tint="#FFFFFF"/>
+            android:tint="#FFE66B" />
 
+        <ImageButton
+            android:id="@+id/repeatButton"
+            android:layout_width="38dp"
+            android:layout_height="42dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Repeat"
+            android:padding="9dp"
+            android:alpha="0.45"
+            android:src="@android:drawable/ic_menu_revert"
+            android:tint="#FFE66B" />
     </LinearLayout>
-
-
-    <!-- =====================================================
-         LOWER ACTIONS
-         ===================================================== -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -294,9 +273,9 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="QUEUE"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFD928"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/buttonPlaylist"
@@ -307,9 +286,9 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="PLAYLIST"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFD928"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/buttonFloating"
@@ -320,10 +299,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="FLOAT"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFD928"
             android:textSize="14sp"
-            android:textStyle="bold"/>
-
+            android:textStyle="bold" />
     </LinearLayout>
-
 </LinearLayout>
